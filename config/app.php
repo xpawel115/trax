@@ -1,5 +1,7 @@
 <?php
 
+use App\Modules\Car\Providers\CarServiceProvider;
+
 return [
 
     /*
@@ -159,6 +161,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        CarServiceProvider::class,
 
     ],
 

@@ -2,10 +2,21 @@
 
 namespace App\Modules\Car\Http\Requests;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\Foundation\Http\FormRequest;
 
-class CreateCarRequest extends Controller
+/**
+ * @property int    $year
+ * @property string make
+ * @property string model
+ */
+class CreateCarRequest extends FormRequest
 {
-    //
+    public function rules(): array
+    {
+        return [
+            'year'  => 'required|integer|min:1900|max:2021',
+            'make'  => 'required|string|max:255',
+            'model' => 'required|string|max:255'
+        ];
+    }
 }

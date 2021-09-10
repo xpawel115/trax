@@ -2,18 +2,19 @@
 
 namespace App\Modules\Car\Http\Resources;
 
-use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class CarCollectionResource extends JsonResource
+class CarCollectionResource extends ResourceCollection
 {
     /**
      * Transform the resource into an array.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return array
+     * @return AnonymousResourceCollection
      */
-    public function toArray($request)
+    public function toArray($request): AnonymousResourceCollection
     {
-        return parent::toArray($request);
+        return CarResource::collection($this->collection);
     }
 }

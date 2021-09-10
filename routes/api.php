@@ -18,6 +18,8 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
+require __DIR__ . '/../app/Modules/Car/routes.php';
+
 
 //////////////////////////////////////////////////////////////////////////
 /// Mock Endpoints To Be Replaced With RESTful API.
