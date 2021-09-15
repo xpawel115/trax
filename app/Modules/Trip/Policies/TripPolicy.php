@@ -9,13 +9,13 @@ class TripPolicy
 {
     use HandlesAuthorization;
 
-    /**
-     * Create a new policy instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function getTrips(User $user): bool
     {
-        //
+        return true;
+    }
+
+    public function createTrip(User $user): bool
+    {
+        return true;
     }
 }
