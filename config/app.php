@@ -1,6 +1,7 @@
 <?php
 
 use App\Modules\Car\Providers\CarServiceProvider;
+use App\Modules\Trip\Providers\TripServiceProvider;
 
 return [
 
@@ -162,6 +163,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         CarServiceProvider::class,
+        TripServiceProvider::class,
 
     ],
 

@@ -24,9 +24,9 @@ class CarController extends Controller
 
     public function show(Request $request, CarRepositoryInterface $carRepository): CarResource
     {
-        return new CarResource(
+        return CarResource::make(
             $carRepository->findOrFail($request->id)
-        );
+        )->withTripSummary();
     }
 
     public function create(CreateCarRequest $request, CreateCarAction $action): CarResource

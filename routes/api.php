@@ -18,7 +18,10 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-require __DIR__ . '/../app/Modules/Car/routes.php';
+Route::group(['middleware' => 'auth:api'], static function () {
+    require __DIR__ . '/../app/Modules/Car/routes.php';
+    require __DIR__ . '/../app/Modules/Trip/routes.php';
+});
 
 
 //////////////////////////////////////////////////////////////////////////
