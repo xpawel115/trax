@@ -9,13 +9,23 @@ class CarPolicy
 {
     use HandlesAuthorization;
 
-    /**
-     * Create a new policy instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function getCars(User $user): bool
     {
-        //
+        return true;
+    }
+
+    public function show(User $user): bool
+    {
+        return true;
+    }
+
+    public function create(User $user): bool
+    {
+        return true;
+    }
+
+    public function destroy(User $user): bool
+    {
+        return true;
     }
 }
