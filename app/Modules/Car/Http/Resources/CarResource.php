@@ -47,7 +47,7 @@ class CarResource extends JsonResource
     {
         return [
             'trip_count' => $this->resource->trips->count(),
-            'trip_miles' => round($this->resource->trips->sum('miles'), 2)
+            'trip_miles' => $this->resource->trips->sum('miles')
         ];
     }
 }
